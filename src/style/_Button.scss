@@ -1,0 +1,84 @@
+
+// 變數
+$main-green: #539A56;
+$grey-background: #FAF9F9;
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+}
+
+.btn-box {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    width: auto;
+    gap: 15px; // 圖片與文字間距
+    transition: all 0.3s ease; // 添加過渡效果，讓動畫更平滑
+
+    &:hover {
+        // 放大效果
+        transform: scale(1.05);
+    }
+}
+
+.btn-image {
+    width: 80px;  // 圖片尺寸改小
+    height: 80px; // 圖片尺寸改小
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid $main-green; // 邊框也縮小
+    flex-shrink: 0;
+}
+
+.btn-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.btn-text-box {
+    // 這個容器是為了讓文字與箭頭在同一行
+    display: flex;
+    align-items: center;
+    gap: 75px; // 文字與箭頭間距，根據您的設計稿調整
+}
+
+.btn-text {
+    p {
+        color: $main-green;
+        font-family: 'Noto Serif TC', serif;
+        font-size: 16px; // 文字大小改小
+        margin: 0;
+        white-space: nowrap; 
+    }
+}
+
+.btn-arrow {
+    color: $main-green;
+    font-size: 24px; // 箭頭大小改小
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background-color: $main-green;
+    border: none;
+    margin-top: 1rem;
+    
+    // 初始狀態：透明度為 0
+    opacity: 0;
+    // 添加過渡效果，讓它平滑地出現和消失
+    transition: opacity 0.3s ease;
+}
+// 當滑鼠移動到 .btn-container 時，改變 .divider 的透明度
+.btn-container:hover .divider {
+    opacity: 1; // 讓水平線完全顯示
+}

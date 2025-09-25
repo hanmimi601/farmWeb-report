@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;700&display=swap');
+
+// 變數
+$main-green: #539A56; // 設計稿中的主綠色調
+$padding-base: 2rem; // 40px
+$ls: 5px;
+
+// banner區
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; // 防止水平滾動條
+}
+
+.home-page {
+    // 容器設定
+    background: #F0FFF5;
+    min-height: 100vh;
+    width: 100%;
+    padding: 1rem;
+    position: relative; // 作為絕對定位 Logo 和右下角文案的參考
+    box-sizing: border-box;
+    font-family: 'Noto Serif TC', serif; // 中文使用思源宋體
+    padding-left: 50px
+}
+
+// 這個容器是為了整個頁面的內容
+.page-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// --- 1. 左上角 Logo ---
+// 這裡我們只處理 Logo 圖片
+.Logo {
+    position: absolute;
+    top: 1rem;
+    left: $padding-base;
+    z-index: 10;
+
+    img {
+        width: 120px;
+        height: auto;
+        display: block;
+    }
+}
+
+// --- 2. 中央的圖片與文字容器 ---
+// 這個 Flexbox 容器負責將圖片和文字水平並排且居中對齊
+.main-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+    max-width: 1200px;
+}
+
+// --- 圖片容器 (figure) ---
+.bannerImg {
+    width: 80vh;
+    height: 70vh;
+    overflow: hidden;
+    margin-left: -50px; // 與右側文字間距
+
+    // 關鍵部分：使用 clip-path 實現不規則圓形
+    -webkit-clip-path: inset(10px 20px 30px 10px round 20px 5px 50px 0);
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+
+        // 這個 transform 會被 JavaScript 動態改變
+        transform: scale(1);
+        transition: transform 0.1s linear;
+    }
+}
+
+// --- 3. 右側大字與副標容器 ---
+.banner_side_title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100px;
+
+    .title {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 80px;
+        font-weight: 300;
+        color: $main-green;
+        margin: 0 0 10px 0;
+        letter-spacing: 5px;
+    }
+
+    .title2 {
+        font-size: 24px;
+        color: #539A56;
+        margin: 0;
+        font-weight: 400;
+        letter-spacing: 10px;
+    }
+
+}
+
+// --- 4. 右下角文案 ---
+.title_closing_box {
+    margin-top: 90px;
+    align-items: flex-end;
+    /* 垂直置中子元素 */
+    justify-content: center;
+    /* 水平置中子元素 */
+    /* 父層容器需要有固定的寬度和高度，才能看出置中效果 */
+    width: 400px;
+    height: 500px;
+    // background-color: lightgray;
+
+    .title_closing {
+        text-align: right;
+        font-size: 14px;
+        color: $main-green;
+        line-height: 1.8;
+        letter-spacing: 5px;
+        white-space: pre-wrap;
+    }
+}
+
+// list按鈕區
+.list-section {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    gap: 10px;
+}
+
+.list-title-box {
+    width: 80%;
+    text-align: left;
+    margin-bottom: 2rem;
+
+    p {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #539A56;
+        letter-spacing: $ls
+    }
+}
+
+// 所有按鈕的共同容器
+.button-container-main {
+    display: flex;
+    flex-direction: column; // 讓上下兩排按鈕垂直排列
+    align-items: flex-start; // 讓所有按鈕的子容器靠左對齊
+    gap: 100px; // 調整上下兩排按鈕的間距
+}
+
+.button-row-top {
+    display: flex;
+    justify-content: flex-start; // 讓按鈕靠左對齊
+    gap: 120px; // 按鈕之間的間距
+}
+
+.button-row-bottom {
+    display: flex;
+    justify-content: flex-start; // 讓按鈕靠左對齊
+}
+
+
+
+// Cow Cuddling區
+#Cow_Cuddling_page {
+    padding: 2rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.cow_TC {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; // 限制最大寬度以保持版面整潔
+    margin-bottom: 50px; // 與圖片的間距
+    gap: 100px;
+}
+
+.cow_title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+
+    p {
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .cow_title1 {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 2rem;
+        color: #B3D1B4; // 淺綠色
+        letter-spacing: 5px;
+    }
+
+    .cow_title2 {
+        font-family: 'Noto Serif TC', serif;
+        font-size: 3rem;
+        color: $main-green;
+        margin-left: 100px;
+        letter-spacing: 5px;
+
+    }
+}
+
+.cow_content {
+    flex: 2; // 佔據右側較大空間
+    text-align: left;
+
+    .cow_content_1 {
+        font-family: 'Noto Serif TC', serif;
+        font-size: 16px;
+        line-height: 1.8;
+        color: $main-green;
+        letter-spacing: 5px;
+        white-space: pre-wrap;
+    }
+}
+
+.main-cowImg {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+// kune kune區
+.Kune_kune_page {
+    height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.Kune_kune_section {
+    display: flex;
+    width: 100%;
+    max-width: 1200px; 
+    margin-bottom: 50px; 
+    gap: 100px;
+}
+
+.kune_title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    p {
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .kune_title_eg {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 2rem;
+        color: #B3D1B4; // 淺綠色
+        letter-spacing: 5px;
+    }
+
+    .kune_title_ch {
+        font-family: 'Noto Serif TC', serif;
+        font-size: 3rem;
+        color: $main-green;
+        margin-left: 100px;
+        letter-spacing: 5px;
+
+    }
+}
+
+.kune_content {
+    flex: 2; // 佔據右側較大空間
+    text-align: left;
+
+    .kune_main_content {
+        font-family: 'Noto Serif TC', serif;
+        font-size: 16px;
+        line-height: 1.8;
+        color: $main-green;
+        letter-spacing: 5px;
+        white-space: pre-wrap;
+    }
+}
+
+.kuneImg_container {
+    width: 100%;
+    max-width: 1200px; // 限制最大寬度
+    display: flex;
+    justify-content: center;
+}
+
+.kuneImg_box {
+    display: flex;
+    align-items: flex-end;
+    /* 圖片底部對齊，營造錯落感 */
+    justify-content: center;
+    gap: 50px;
+    /* 圖片之間的間距 */
+    margin: 0;
+    width: 100%;
+    /* 讓它佔滿 kuneImg_container 的寬度 */
+
+}
+
+.kuneImg_box img {
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+.kuneImg_box img:nth-child(1){margin-bottom: 50px;}
+.kuneImg_box img:nth-child(2){margin-bottom: 30px;}
+.kuneImg_box img:nth-child(3){margin-bottom: 100px;}
+
+// sheep Area區
+
+.Sheep_page{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    gap: 50px;
+}
+
+.Sheep_section {
+    display: flex;
+    width: 100%;
+    max-width: 600px; // 限制最大寬度以保持版面整潔
+    margin-bottom: 50px; // 與圖片的間距
+    gap: 60px;
+    flex-direction: column;
+    margin-right: 500px;
+    
+}
+
+.sheep_title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    p {
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .sheep_title_eg {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 2rem;
+        color: #B3D1B4; // 淺綠色
+        letter-spacing: 5px;
+    }
+
+    .sheep_title_ch {
+        font-family: 'Noto Serif TC', serif;
+        font-size: 3rem;
+        color: $main-green;
+        margin-left: 100px;
+        letter-spacing: 5px;
+    }
+}
+
+.sheep_content {
+    
+    .sheep_main_content {
+        font-family: 'Noto Serif TC', serif;
+        font-size: 16px;
+        line-height: 1.8;
+        color: $main-green;
+        letter-spacing: 5px;
+        white-space: pre-wrap;
+    }
+}
+
+.sheepImg_container{
+    display: flex;
+    margin-left: 100px;
+    gap:100px;
+
+    .sheep_box2{
+    margin-right: -5%;
+    margin-top: -300px; 
+    align-self: flex-start;
+    }
+}
+
+//Alpaca Area區
+.Alpaca_page{
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    gap: 200px;
+}
+
+.Alpaca__section{
+     display: flex;
+    width: 100%;
+    max-width: 600px; // 限制最大寬度以保持版面整潔
+    margin-bottom: 50px; // 與圖片的間距
+    gap: 60px;
+    flex-direction: column;
+}
+
+.alpaca_title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    p {
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .alpaca_title_eg {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 2rem;
+        color: #B3D1B4; // 淺綠色
+        letter-spacing: 5px;
+    }
+
+    .alpaca_title_ch {
+        font-family: 'Noto Serif TC', serif;
+        font-size: 3rem;
+        color: $main-green;
+        margin-left: 100px;
+        letter-spacing: 5px;
+    }
+}
+
+.alpaca_content {
+    
+    .alpaca_main_content {
+        font-family: 'Noto Serif TC', serif;
+        font-size: 16px;
+        line-height: 1.8;
+        color: $main-green;
+        letter-spacing: 5px;
+        white-space: pre-wrap;
+    }
+}
