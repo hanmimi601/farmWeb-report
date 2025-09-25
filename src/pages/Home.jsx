@@ -21,6 +21,7 @@ import sheep2 from '../images/sheep_area2.svg';
 import alpaca1 from '../images/Alpaca_area.svg';
 
 
+
 // 123
 
 
@@ -88,15 +89,15 @@ const Home = () => {
             {/* 第一排按鈕 */}
             <div className='button-row-top'>
               {/* 傳入不同的圖片和文字 */}
-              <Button imgSrc={cow1Img} text="與牛共處" />
-              <Button imgSrc={pig2Img} text="漫步對策" />
-              <Button imgSrc={sheep3Img} text="自由放牧" />
+              <Button imgSrc={cow1Img} text="與牛共處"  targetId="Cow_Cuddling_page"/>
+              <Button imgSrc={pig2Img} text="漫步對策"  targetId="Kune_kune_page"/>
+              <Button imgSrc={sheep3Img} text="自由放牧"  targetId="Sheep_page"/>
             </div>
 
             {/* 第二排按鈕 */}
             <div className='button-row-bottom'>
               {/* 傳入不同的圖片和文字 */}
-              <Button imgSrc={Alpaca4Img} text="探索綠洲" />
+              <Button imgSrc={Alpaca4Img} text="探索綠洲" targetId="Alpaca_page"/>
             </div>
           </div>
         </section>
@@ -124,7 +125,7 @@ const Home = () => {
 
       {/* Kune kune區 */}
 
-      <div className='Kune_kune_page'>
+      <div id='Kune_kune_page'>
         <section className='Kune_kune_section'>
           <div className='kune_title'>
             <p className='kune_title_eg'>Kune Kune</p>
@@ -146,7 +147,7 @@ const Home = () => {
 
       {/* Sheep Area區 */}
 
-      <div className='Sheep_page'>
+      <div id='Sheep_page'>
         <section className='Sheep_section'>
           <div className='sheep_title'>
             <p className='sheep_title_eg'>Sheep Area</p>
@@ -172,11 +173,11 @@ const Home = () => {
 
       {/* Alpaca Area區 */}
 
-      <div className='Alpaca_page'>
+      <div id='Alpaca_page'>
         {/* 圖片 */}
         <div className='alpacaImg_container'>
           <figure className='alpaca_box'>
-              <img src={alpaca1} alt="圖片" />
+            <img src={alpaca1} alt="圖片" />
           </figure>
         </div>
 
@@ -201,8 +202,8 @@ const Home = () => {
               <div className='row'>
                 <div className='activity'>
                   <p className='parent'>
-                    <span className='ACTIVITY LIST'></span>
-                    <span className='活動清單'></span>
+                    <span className='big_activity'>ACTIVITY-LIST</span>
+                    <span className='s_activity'>活動清單</span>
                   </p>
                   <ul className='child_list'>
                     <li><a href="#Cow_Cuddling_page">
@@ -214,7 +215,33 @@ const Home = () => {
                       </span>
                     </a>
                     </li>
-
+                    <li><a href="#Kune_kune_page">
+                      <span className='en'>
+                        Kune Kune
+                      </span>
+                      <span className='ch'>
+                        酷尼豬區
+                      </span>
+                    </a>
+                    </li>
+                    <li><a href="#Sheep_page">
+                      <span className='en'>
+                        Sheep Area
+                      </span>
+                      <span className='ch'>
+                        綿羊區
+                      </span>
+                    </a>
+                    </li>
+                    <li><a href="#Alpaca_page">
+                      <span className='en'>
+                        Alpaca Area
+                      </span>
+                      <span className='ch'>
+                        羊駝區
+                      </span>
+                    </a>
+                    </li>
                   </ul>
                 </div>
 
@@ -222,6 +249,21 @@ const Home = () => {
 
             </div>
           </div>
+        </div>
+        <div className='footer_foot'>
+          <div className='logo_Img'>
+            <img src={logoImg} alt="LOGO" />
+          </div>
+          <address>
+            "02-12345678"
+            <br />
+            乳牛市綿羊區羊駝街
+            <br />
+            小豬里9527-100
+          </address>
+          <p className='time'>9:00~17:00</p>
+          <small className='copyright'>Copyright&copy; 2025HONEY MOO.</small>
+
         </div>
       </footer>
     </div>

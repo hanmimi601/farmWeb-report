@@ -2,12 +2,17 @@
 
 // 變數
 $main-green: #539A56; // 設計稿中的主綠色調
+$dark-green: #2B5D34; // 用於深色背景的綠色
+$black: #000000;
+$light-grey-green: #B3D1B4; // 淺綠色，用於英文標題
+
 $padding-base: 2rem; // 40px
 $ls: 5px;
 
 // banner區
 html,
 body {
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
     overflow-x: hidden; // 防止水平滾動條
@@ -23,6 +28,7 @@ body {
     box-sizing: border-box;
     font-family: 'Noto Serif TC', serif; // 中文使用思源宋體
     padding-left: 50px
+    
 }
 
 // 這個容器是為了整個頁面的內容
@@ -90,6 +96,7 @@ body {
     justify-content: flex-start;
     height: 100px;
 
+
     .title {
         font-family: 'Times New Roman', Times, serif;
         font-size: 80px;
@@ -100,6 +107,7 @@ body {
     }
 
     .title2 {
+        font-family: 'Noto Serif TC', serif;
         font-size: 24px;
         color: #539A56;
         margin: 0;
@@ -124,6 +132,7 @@ body {
     .title_closing {
         text-align: right;
         font-size: 14px;
+        font-family: 'Noto Serif TC', serif;
         color: $main-green;
         line-height: 1.8;
         letter-spacing: 5px;
@@ -149,6 +158,7 @@ body {
 
     p {
         font-size: 16px;
+        font-family: 'Noto Serif TC', serif;
         line-height: 1.8;
         color: #539A56;
         letter-spacing: $ls
@@ -246,7 +256,7 @@ body {
 
 
 // kune kune區
-.Kune_kune_page {
+#Kune_kune_page {
     height: 100vh;
     padding: 2rem;
     display: flex;
@@ -336,7 +346,7 @@ body {
 
 // sheep Area區
 
-.Sheep_page{
+#Sheep_page{
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -409,7 +419,7 @@ body {
 }
 
 //Alpaca Area區
-.Alpaca_page{
+#Alpaca_page{
     padding: 2rem;
     display: flex;
     align-items: center;
@@ -463,5 +473,156 @@ body {
         color: $main-green;
         letter-spacing: 5px;
         white-space: pre-wrap;
+    }
+}
+
+//footer
+
+.footer_container {
+    width: 100%;
+    display: flex; /* 使用 Flexbox 讓左右兩部分並排 */
+    min-height: 400px; /* 最小高度 */
+}
+
+.inner {
+    flex: 1; /* 讓左邊區塊佔據大部分空間 */
+    background-color: $main-green; 
+    padding: 80px 5%; 
+    display: flex;
+    justify-content: flex-end; /* 讓內容靠右對齊 (但主要還是由 fnav 寬度控制) */
+}
+
+.footer_main {
+    width: 100%;
+    max-width: 500px; /* 限制左側內容的最大寬度，使其不會無限延伸 */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 讓 fnav 內容靠左對齊 */
+}
+
+.fnav {
+    .row {
+        width: 100%;
+        display: flex;
+        /* 如果未來有其他欄位，可以用 justify-content: space-between */
+        /* 目前只有一個 .activity，所以讓它靠左 */
+    }
+
+    .activity {
+        gap: 20px;
+        p.parent {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column; /* 讓英文和中文垂直排列 */
+            align-items: flex-start; /* 預設靠左 */
+
+            span {
+                display: block; /* 讓 span 獨佔一行 */
+                color: white;
+                line-height: 1.2;
+            }
+
+            .big_activity {
+                font-family: 'Times New Roman', Times, serif; // 英文字體
+                font-size: 2rem;
+                color: white;
+                font-weight: normal;
+            }
+            .s_activity {
+                font-family: 'Noto Serif TC', serif; // 中文字體
+                font-size: 1.5rem;
+                color: $light-grey-green;
+                font-weight: bold;
+            }
+        }
+
+        .child_list {
+            color: #F0FFF5;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin-bottom: 25px; /* 列表項目間距 */
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                a {
+                    text-decoration: none; /* 移除連結底線 */
+                    color: white;
+                    display: flex;
+                    flex-direction: column;
+
+                    .en {
+                        font-family: 'Times New Roman', Times, serif; // 英文字體
+                        font-size: 1.2rem;
+                        color: white;
+                    }
+
+                    .ch {
+                        font-family: 'Noto Serif TC', serif; // 中文字體
+                        font-size: 1rem;
+                        color: $light-grey-green;
+                    }
+
+                    &:hover {
+                        .en {
+                          color: #FFC121
+                        }
+                        .ch {
+                          color: #FFC121
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer_foot {
+    flex-shrink: 0; 
+    width: 300px; /* 根據 Figma 設定右邊區塊的固定寬度 */
+    background-color: white; /* 右邊的黑色背景 */
+    padding: 50px 50px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 內容置中 */
+    justify-content: flex-start; /* 內容從上方開始排列 */
+    text-align: center;
+    color: white;
+
+
+    .logo_Img {
+        margin-bottom: 30px; // Logo 與下方內容間距
+        img {
+            max-width: 180px; /* 調整 Logo 大小 */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    address {
+        font-family: 'Noto Serif TC', serif;
+        font-style: normal; /* 移除斜體 */
+        margin-top: auto;
+        font-size: 12px;
+        letter-spacing: .11em;
+        line-height: 1.6;
+        color: $black;
+    }
+
+    p.time {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 12px;
+        color: $black;
+        letter-spacing: .03em;
+    }
+
+    small.copyright {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 0.8rem;
+        color: grey;
+        margin-top: auto; /* 讓版權資訊推到最底部 */
     }
 }
