@@ -28,7 +28,6 @@ body {
     box-sizing: border-box;
     font-family: 'Noto Serif TC', serif; // 中文使用思源宋體
     padding-left: 50px
-    
 }
 
 // 這個容器是為了整個頁面的內容
@@ -269,8 +268,8 @@ body {
 .Kune_kune_section {
     display: flex;
     width: 100%;
-    max-width: 1200px; 
-    margin-bottom: 50px; 
+    max-width: 1200px;
+    margin-bottom: 50px;
     gap: 100px;
 }
 
@@ -340,13 +339,22 @@ body {
     object-fit: cover;
     display: block;
 }
-.kuneImg_box img:nth-child(1){margin-bottom: 50px;}
-.kuneImg_box img:nth-child(2){margin-bottom: 30px;}
-.kuneImg_box img:nth-child(3){margin-bottom: 100px;}
+
+.kuneImg_box img:nth-child(1) {
+    margin-bottom: 50px;
+}
+
+.kuneImg_box img:nth-child(2) {
+    margin-bottom: 30px;
+}
+
+.kuneImg_box img:nth-child(3) {
+    margin-bottom: 100px;
+}
 
 // sheep Area區
 
-#Sheep_page{
+#Sheep_page {
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -365,7 +373,7 @@ body {
     gap: 60px;
     flex-direction: column;
     margin-right: 500px;
-    
+
 }
 
 .sheep_title {
@@ -395,7 +403,7 @@ body {
 }
 
 .sheep_content {
-    
+
     .sheep_main_content {
         font-family: 'Noto Serif TC', serif;
         font-size: 16px;
@@ -406,20 +414,20 @@ body {
     }
 }
 
-.sheepImg_container{
+.sheepImg_container {
     display: flex;
     margin-left: 100px;
-    gap:100px;
+    gap: 100px;
 
-    .sheep_box2{
-    margin-right: -5%;
-    margin-top: -300px; 
-    align-self: flex-start;
+    .sheep_box2 {
+        margin-right: -5%;
+        margin-top: -300px;
+        align-self: flex-start;
     }
 }
 
 //Alpaca Area區
-#Alpaca_page{
+#Alpaca_page {
     padding: 2rem;
     display: flex;
     align-items: center;
@@ -429,8 +437,8 @@ body {
     gap: 200px;
 }
 
-.Alpaca__section{
-     display: flex;
+.Alpaca__section {
+    display: flex;
     width: 100%;
     max-width: 600px; // 限制最大寬度以保持版面整潔
     margin-bottom: 50px; // 與圖片的間距
@@ -465,7 +473,7 @@ body {
 }
 
 .alpaca_content {
-    
+
     .alpaca_main_content {
         font-family: 'Noto Serif TC', serif;
         font-size: 16px;
@@ -480,55 +488,67 @@ body {
 
 .footer_container {
     width: 100%;
-    display: flex; /* 使用 Flexbox 讓左右兩部分並排 */
-    min-height: 400px; /* 最小高度 */
+    display: flex;
+    /* 使用 Flexbox 讓左右兩部分並排 */
+    min-height: 400px;
+    /* 最小高度 */
 }
 
 .inner {
-    flex: 1; /* 讓左邊區塊佔據大部分空間 */
-    background-color: $main-green; 
-    padding: 80px 5%; 
+    flex: 1;
+    /* 讓左邊區塊佔據大部分空間 */
+    background-color: $main-green;
+    padding: 80px 5%;
     display: flex;
-    justify-content: flex-end; /* 讓內容靠右對齊 (但主要還是由 fnav 寬度控制) */
+    justify-content: flex-end;
+    /* 讓內容靠右對齊 (但主要還是由 fnav 寬度控制) */
 }
 
 .footer_main {
     width: 100%;
-    max-width: 500px; /* 限制左側內容的最大寬度，使其不會無限延伸 */
+    max-width: 500px;
+    /* 限制左側內容的最大寬度，使其不會無限延伸 */
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* 讓 fnav 內容靠左對齊 */
+    align-items: flex-start;
+    /* 讓 fnav 內容靠左對齊 */
 }
 
 .fnav {
     .row {
         width: 100%;
         display: flex;
+        justify-content: flex-start;
+        gap: 150px;
         /* 如果未來有其他欄位，可以用 justify-content: space-between */
         /* 目前只有一個 .activity，所以讓它靠左 */
     }
 
-    .activity {
+    .activity, .about{
         gap: 20px;
         p.parent {
             margin-bottom: 20px;
             display: flex;
-            flex-direction: column; /* 讓英文和中文垂直排列 */
-            align-items: flex-start; /* 預設靠左 */
+            flex-direction: column;
+            /* 讓英文和中文垂直排列 */
+            align-items: flex-start;
+            /* 預設靠左 */
 
             span {
-                display: block; /* 讓 span 獨佔一行 */
+                display: block;
+                /* 讓 span 獨佔一行 */
                 color: white;
                 line-height: 1.2;
             }
 
-            .big_activity {
+            .big_activity, .big_about {
                 font-family: 'Times New Roman', Times, serif; // 英文字體
                 font-size: 2rem;
                 color: white;
                 font-weight: normal;
             }
-            .s_activity {
+
+            .s_activity, .s_about{
                 font-family: 'Noto Serif TC', serif; // 中文字體
                 font-size: 1.5rem;
                 color: $light-grey-green;
@@ -542,13 +562,16 @@ body {
             margin: 0;
 
             li {
-                margin-bottom: 25px; /* 列表項目間距 */
+                margin-bottom: 25px;
+
+                /* 列表項目間距 */
                 &:last-child {
                     margin-bottom: 0;
                 }
 
                 a {
-                    text-decoration: none; /* 移除連結底線 */
+                    text-decoration: none;
+                    /* 移除連結底線 */
                     color: white;
                     display: flex;
                     flex-direction: column;
@@ -567,35 +590,41 @@ body {
 
                     &:hover {
                         .en {
-                          color: #FFC121
+                            color: #FFC121
                         }
+
                         .ch {
-                          color: #FFC121
+                            color: #FFC121
                         }
                     }
                 }
+            
             }
         }
     }
 }
 
 .footer_foot {
-    flex-shrink: 0; 
+    flex-shrink: 0;
     width: 300px;
     background-color: white;
     padding: 50px 50px 35px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* 內容置中 */
-    justify-content: flex-start; /* 內容從上方開始排列 */
+    align-items: center;
+    /* 內容置中 */
+    justify-content: flex-start;
+    /* 內容從上方開始排列 */
     text-align: center;
     color: white;
 
 
     .logo_Img {
         margin-bottom: 30px; // Logo 與下方內容間距
+
         img {
-            max-width: 180px; /* 調整 Logo 大小 */
+            max-width: 180px;
+            /* 調整 Logo 大小 */
             height: auto;
             display: block;
             margin: 0 auto;
@@ -604,7 +633,8 @@ body {
 
     address {
         font-family: 'Noto Serif TC', serif;
-        font-style: normal; /* 移除斜體 */
+        font-style: normal;
+        /* 移除斜體 */
         margin-top: auto;
         font-size: 12px;
         letter-spacing: .11em;
@@ -623,6 +653,7 @@ body {
         font-family: 'Times New Roman', Times, serif;
         font-size: 0.8rem;
         color: grey;
-        margin-top: auto; /* 讓版權資訊推到最底部 */
+        margin-top: auto;
+        /* 讓版權資訊推到最底部 */
     }
 }

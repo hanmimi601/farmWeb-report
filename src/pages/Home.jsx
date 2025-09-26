@@ -244,9 +244,37 @@ const Home = () => {
                     </li>
                   </ul>
                 </div>
-
+                 <div className='about'> 
+      <p className='parent'>
+        <span className='big_about'>OTHER</span>
+        <span className='s_about'>其他</span>
+      </p>
+      <ul className='child_list'>
+        {/* 1. 關於我們 */}
+        <li>
+          <a href="#about-us">
+            <span className='en'>ABOUT</span>
+            <span className='ch'>關於我們</span>
+          </a>
+        </li>
+        {/* 2. 最新消息 */}
+        <li>
+          <a href="#news">
+            <span className='en'>NEWS</span>
+            <span className='ch'>最新消息</span>
+          </a>
+        </li>
+        {/* 3. 營業時間 */}
+        <li>
+          <a href="#open-time">
+            <span className='en'>OPEN</span>
+            <span className='ch'>營業時間</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+                
               </div>
-
             </div>
           </div>
         </div>
